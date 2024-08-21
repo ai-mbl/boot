@@ -743,8 +743,9 @@ def conv2d(img, kernel):
     output = np.zeros((h_new, w_new))
 
     # TODO: add your code for filling output with the convolved image
-    for i in tqdm(range(...)):
-        ...
+    for i in tqdm(range(output.shape[0]), desc="Processing rows", position=0, leave=True):
+        for j in tqdm(range(output.shape[1]),desc="Processing columns", position=0, leave=False):
+            ...
 
     return output
 
@@ -768,7 +769,7 @@ def conv2d(img, kernel):
     output = np.zeros((h_new, w_new))
 
     for i in tqdm(range(output.shape[0]), desc="Processing rows", position=0, leave=True):
-        for j in tqdm(range(output.shape[1]),desc="Processing columns", leave=False):
+        for j in tqdm(range(output.shape[1]),desc="Processing columns", position=0, leave=False):
             output[i, j] = np.sum(img[i:i + d_k, j:j + d_k] * kernel)
     return output
 
