@@ -767,8 +767,8 @@ def conv2d(img, kernel):
     w_new = w - d_k + 1
     output = np.zeros((h_new, w_new))
 
-    for i in tqdm(range(output.shape[0]), desc="Processing rows", leave=True):
-        for j in tqdm(range(output.shape[1]),desc="Processing columns",leave=False):
+    for i in tqdm(range(output.shape[0]), desc="Processing rows", position=0, leave=True):
+        for j in tqdm(range(output.shape[1]),desc="Processing columns", leave=False):
             output[i, j] = np.sum(img[i:i + d_k, j:j + d_k] * kernel)
     return output
 
