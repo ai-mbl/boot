@@ -19,6 +19,17 @@ We will learn about:
 - Convolutions (This is important as it is the primary operation in Convolutional Neural Networks)
 - Data Augmentation (This is important as it helps in artificially increasing the size of the training data which is useful for training models in a data efficient way)
 
+### Setup
+
+Please run the setup script to create the environment for this exercise and download data.
+
+```
+source setup.sh
+```
+
+Now open the `exercise.ipynb` notebook in VSCode with the `jupyter` extension and select the 00_boot kernel.
+
+
 ### Dataset
 
 We will be using sample images from the _MoNuSeg_ dataset provided by [Kumar et al, 2018](https://ieeexplore.ieee.org/document/8880654). The data was publicly made available [here](https://monuseg.grand-challenge.org/) by the authors of the publication.
