@@ -1,9 +1,5 @@
 ### Exercise 0: Python Boot Camp
 
-Please open the google colab notebook by clicking on this [link](https://colab.research.google.com/github/dlmbl/boot/blob/main/exercise.ipynb).
-
-You can open the solutions in colab by clicking [here](https://colab.research.google.com/github/dlmbl/boot/blob/main/solution.ipynb).
-
 ### Overview
 
 In this notebook, we will go through some basic image processing in Python, come across standard tasks required while setting up deep learning pipelines, and familiarize ourselves with popular packages such as `glob`, `tifffile`, `tqdm` and more.
@@ -18,6 +14,17 @@ We will learn about:
 - Batching images (As we train in a SGD manner, batching is important as it helps in training the model in a memory efficient way and smoothens the optimization process)
 - Convolutions (This is important as it is the primary operation in Convolutional Neural Networks)
 - Data Augmentation (This is important as it helps in artificially increasing the size of the training data which is useful for training models in a data efficient way)
+
+### Setup
+
+Please run the setup script to create the environment for this exercise and download data.
+
+```
+source setup.sh
+```
+
+Now open the `exercise.ipynb` notebook in VSCode with the `jupyter` extension and select the 00_boot kernel.
+
 
 ### Dataset
 
