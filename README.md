@@ -1,9 +1,5 @@
 ### Exercise 0: Python Boot Camp
 
-Please open the google colab notebook by clicking on this [link](https://colab.research.google.com/github/dlmbl/boot/blob/main/exercise.ipynb).
-
-You can open the solutions in colab by clicking [here](https://colab.research.google.com/github/dlmbl/boot/blob/main/solution.ipynb).
-
 ### Overview
 
 In this notebook, we will go through some basic image processing in Python, come across standard tasks required while setting up deep learning pipelines, and familiarize ourselves with popular packages such as `glob`, `tifffile`, `tqdm` and more.
