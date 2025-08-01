@@ -695,7 +695,9 @@ Can you think of any strategy which ensures that the output image is the same si
 # %% [markdown]
 """
 <div class="alert alert-info">
+
 ### Task 3.3
+
 Apply the Sobel filter and describe the output image. What features does it highlight? <br>
 """
 
@@ -721,7 +723,9 @@ visualize(img[128:384, 128:384, 0], output_img)
 # %% [markdown]
 """
 <div class="alert alert-info">
+
 ### Task 3.4 (Bonus)
+
 Try different [kernels](https://www.geeksforgeeks.org/deep-learning/types-of-convolution-kernels/#basic-convolution-kernels) and visualize the results. <br>
 What features do they highlight? <br>
 """
