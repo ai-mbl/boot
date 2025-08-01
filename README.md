@@ -6,14 +6,14 @@ In this notebook, we will go through some basic image processing in Python, come
 
 We will learn about:
 
-- Loading images (This is important as images are the primary input to most deep learning models)
-- Normalizing images (This is important as it helps in faster convergence of models becuse it helps in reducing the scale of the input data and hence the scale of the gradients)
-- Cropping images (This is important as it helps in creating smaller images from the original images which is useful for training models in a memory efficient way)
-- Downsampling images (This is important as it helps in reducing the size of the images which is useful for training models in a memory efficient way)
-- Flipping images (This is important as it helps in creating new images from the original data which is useful for training models in a memory efficient way)
-- Batching images (As we train in a SGD manner, batching is important as it helps in training the model in a memory efficient way and smoothens the optimization process)
-- Convolutions (This is important as it is the primary operation in Convolutional Neural Networks)
-- Data Augmentation (This is important as it helps in artificially increasing the size of the training data which is useful for training models in a data efficient way)
+- Loading images (This is important, as images serve as the primary input for many deep learning models in computer vision)
+- Normalizing images (This is important as it helps in faster convergence of models because it helps in reducing the scale of the input data and hence the scale of the gradients)
+- Cropping images (This is important as it reduces image size by removing peripheral regions, creating smaller inputs that improve memory efficiency during training.)
+- Downsampling images (This is important as it reduces image size by lowering its resolution—scaling down the number of pixels—unlike cropping, which removes parts of the image.)
+- Flipping images (This is important as it  creates mirrored versions of the originals, effectively augmenting the dataset with new examples and improving model generalisation without increasing memory requirements.)
+- Batching images (Since training is typically performed using Stochastic Gradient Descent, which updates model weights based on small subsets of data, batching is important as it enables memory-efficient training and helps stabilise the optimisation process).
+- Convolutions (This is important as it is the primary operation in Convolutional Neural Networks, where small filters slide over the image to extract local features)
+- Data Augmentation (This is important as it helps artificially increase the size of the training data, which is useful for training models in a data-efficient way—achieving better performance with limited original data).
 
 ### Setup
 
