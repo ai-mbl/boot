@@ -238,13 +238,13 @@ plt.tight_layout()
 import numpy as np
 
 unique_values = np.unique(mask)
-print(f"There are {len(unique_values)} Unique values in mask.")
+print(f"There are {len(unique_values)} unique values in mask.")
 
 plt.figure(figsize=(10, 5))
 plt.subplot(121)
 plt.imshow(mask == 0)
 plt.subplot(122)
-plt.imshow(mask == 1)
+plt.imshow(mask == 100)
 plt.tight_layout()
 
 
@@ -310,7 +310,7 @@ In the first chapter, we learned about:
 """<div class="alert alert-info">
 
 ### Task 2.1
-Implement a function to flip the image horizontally and vertically using numpy.
+Flip the image horizontally and vertically using numpy functions.
 """
 
 
@@ -388,7 +388,7 @@ visualize(img, flipped_vertically)
 """<div class="alert alert-info">
 
 ### Task 2.3
-Implement a function to rotate the image by 90 degrees clockwise and counter-clockwise using numpy.
+Rotate the image by 90 degrees clockwise and counter-clockwise using numpy.
 """
 
 
@@ -435,6 +435,9 @@ Hint: `skimage.transform.resize` can be used to rescale the image.
 ##########################
 ######## To Do ###########
 ##########################
+from skimage.transform import resize
+
+
 def crop_and_rescale(im):
     height, width, _ = im.shape
     top_left = ...  # TODO
@@ -452,12 +455,15 @@ visualize(img, top_left_rescaled)
 ##########################
 ####### Solution #########
 ##########################
+from skimage.transform import resize
+
+
 def crop_and_rescale(im):
     height, width, _ = im.shape
     top_left = im[: height // 2, : width // 2, :]
 
     # Rescale to original size
-    top_left_rescaled = np.resize(top_left, im.shape)
+    top_left_rescaled = resize(top_left, im.shape)
     return top_left_rescaled
 
 
@@ -478,13 +484,43 @@ visualize(img, top_left_rescaled)
 # We can compose multiple transformations together using `transforms.Compose` and randomly apply them to the images on-the-fly during training.
 # Here is an example of how to use `torchvision.transforms` to perform some of transformations as above.
 
+# %% [markdown]
+"""<div class="alert alert-info">
 
-# %%
+### Task 2.5
+Let's compose a series of transformations using `transforms.Compose()` that includes:
+- Randomly flip the image horizontally with a probability of 0.5
+- Randomly flip the image vertically with a probability of 0.5
+- Randomly rotate the image by 90 degrees
+- Randomly crop the image to a size of 500x500
+- Resize the image to a size of 1000x1000
+
+Hint: first, convert the numpy array to a PIL image using `transforms.ToPILImage()`.
+"""
+
+
+# %% tags=["task"]
+##########################
+######## To Do ###########
+##########################
+import torchvision.transforms as transforms
+
+# Define a series of transformations
+transform = ...  # TODO
+
+transformed_img = transform(img)
+visualize(img, transformed_img)
+
+# %% tags=["solution"]
+##########################
+####### Solution #########
+##########################
 import torchvision.transforms as transforms
 
 # Define a series of transformations
 transform = transforms.Compose(
     [
+        transforms.ToPILImage(),  # Convert numpy array to PIL Image
         transforms.RandomHorizontalFlip(p=0.5),  # Randomly flip the image horizontally
         transforms.RandomVerticalFlip(p=0.5),  # Randomly flip the image vertically
         transforms.RandomRotation(degrees=90),  # Randomly rotate the image by 90
@@ -503,7 +539,6 @@ visualize(img, transformed_img)
 # After applying the transformations, the images are often normalized before being fed into the model.
 # Normalization is a technique used to scale the pixel values of an image to a specific range, typically [0, 1] or [-1, 1].
 # This helps in stabilizing the training process and improving the convergence of the model.
-# Normalization is especially important when using deep learning models, as it helps in reducing the impact of varying lighting conditions and contrast in images.
 #
 # One way of normalizing an image is to divide the intensity on each pixel by the maximum allowed intensity for the available data type.
 
@@ -646,8 +681,10 @@ plt.tight_layout()
 
 We noticed that the output image is smaller than the input image! <br>
 
-Can you come up with an analytical relationship regarding how much smaller the output image is *vis-à-vis* the input image? <br>
-Can you think of any strategy which ensures that the output image is the same size as the input image?
+Given an input image of size $H \times W$, a filter of size $K_h \times K_w$ , and strides $S_h$ and $S_w$, 
+can you come up with an analytical relationship regarding how much smaller the output image is compared to the input image?
+
+Feel free to play with this [visualizer](https://ezyang.github.io/convolution-visualizer/index.html) to get an intuition (ignore "Padding" and "Dilation" for now)!
 """
 # %% tags=["task"]
 ##########################
@@ -675,7 +712,6 @@ Can you think of any strategy which ensures that the output image is the same si
 #     W_{out} = \left\lfloor \frac{W - K_w}{S_w} \right\rfloor + 1
 # \end{equation*}
 # $$
-# - We can add padding to the input image to ensure that the output image is the same size as the input image.
 
 # %% [markdown]
 # ### Different types of kernels
