@@ -249,7 +249,7 @@ plt.tight_layout()
 
 
 # %% [markdown]
-# ### Reshaping images
+# ### Transpose images
 
 # %% [markdown]
 # In deep learning, images are represented as (`num_channels`, `height`, `width`).
@@ -260,7 +260,7 @@ plt.tight_layout()
 """<div class="alert alert-info">
 
 ### Task 1.5
-Reshape the image to have the channel as the first axis. Use `np.transpose` to achieve this.
+Transpose the image to have the channel as the first axis. Use `np.transpose` to achieve this.
 """
 # %% tags=["task"]
 ##########################
@@ -282,7 +282,7 @@ print("Reshaped image shape: ", reshaped_img.shape)
 
 ## Checkpoint 1
 
-Great Job! 🎊 Please post in the chat when you reach this checkpoint.
+Great Job! 🎊 Please flag the sticky note when you reach this checkpoint.
 
 In the first chapter, we learned about:
 
@@ -569,7 +569,7 @@ print("Normalized image min: ", normalized_img.min(), "max: ", normalized_img.ma
 
 ## Checkpoint 2
 
-Wow! 🤟 Post on the course chat when you reach this checkpoint!
+Wow! 🤟 Flag the sticky note when you reach this checkpoint!
 
 In the second chapter, we learnt about:
 
@@ -799,7 +799,7 @@ visualize(img[128:384, 128:384, 0], output_img)
 """
 <div class="alert alert-success">
 
-Good job! 🤟 Post on the course chat when you reach this checkpoint!
+Good job! 🤟 Flag the sticky note when you reach this checkpoint!
 
 ## Checkpoint 3
 
@@ -986,7 +986,7 @@ for batch_images, batch_masks in data_loader:
 """
 <div class="alert alert-success">
 
-Nice! 🤟 Post on the course chat when you reach this checkpoint!
+Nice! 🤟 Flag the sticky note when you reach this checkpoint!
 
 ## Checkpoint 4
 
@@ -1000,7 +1000,7 @@ In the fourth chapter, we learnt about:
 
 
 # %% [markdown]
-# ## Chapter 5: Advanced Analysis
+# ## Chapter 5: Advanced Analysis (Bonus)
 
 # %% [markdown]
 # This chapter focuses on a more advanced analysis of the image data and masks.
@@ -1010,7 +1010,7 @@ In the fourth chapter, we learnt about:
 # %% [markdown]
 """<div class="alert alert-info">
 
-### Task 5.1
+### Task 5.1 (Bonus)
 Let's find the sizes of the cells in the image and visualize the distribution.
 
 Hint: `skimage.measure.regionprops` can be useful here.
@@ -1057,7 +1057,7 @@ analyze_area(mask)
 # %% [markdown]
 """<div class="alert alert-info">
 
-### Task 5.2
+### Task 5.2 (Bonus)
 
 Let's overlay the masks' boundaries on the images to visualize the results.
 
@@ -1101,7 +1101,7 @@ overlay_masks_on_images(img[:250, :250], mask[:250, :250])
 
 Hurrah! 😃 Post in the chat when you reach this checkpoint! 
 
-## Checkpoint 5
+## Checkpoint 5 (Bonus)
 
 In this chapter, we learned about:
 
