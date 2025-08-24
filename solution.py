@@ -68,8 +68,8 @@ Use the Explorer (left panel) and manually check the directory structure of the 
 ####### Solution #########
 ##########################
 
-# !ls -l monuseg-2018/download/images | wc -l
-# !ls -l monuseg-2018/download/masks | wc -l
+# !ls monuseg-2018/download/images | wc -l
+# !ls monuseg-2018/download/masks | wc -l
 
 
 # %% [markdown]
